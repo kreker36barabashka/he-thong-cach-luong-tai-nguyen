@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
+// Middleware to parse JSON requests
 app.use(express.json());
 
 // Connect to MongoDB
@@ -21,6 +21,7 @@ app.use((err, req, res, next) => {
   res.status(500).send('Đã xảy ra lỗi');
 });
 
+// Route for the home page
 app.get('/', (req, res) => {
   try {
     res.send('Dashboard tài nguyên');
@@ -30,6 +31,7 @@ app.get('/', (req, res) => {
   }
 });
 
+// Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
