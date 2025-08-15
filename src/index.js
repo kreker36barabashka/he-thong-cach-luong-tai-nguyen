@@ -1,0 +1,1 @@
+console.log('Hệ thống cách lượng tài nguyên đã được khởi động thành công!');
