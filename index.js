@@ -15,6 +15,12 @@ mongoose.connect('mongodb://localhost:27017/resource_monitor', { useNewUrlParser
     process.exit(1); // Exit process with failure
   });
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Đã xảy ra lỗi');
+});
+
 app.get('/', (req, res) => {
   try {
     res.send('Dashboard tài nguyên');
