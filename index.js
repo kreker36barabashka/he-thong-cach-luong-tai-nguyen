@@ -13,7 +13,12 @@ mongoose.connect('mongodb://localhost:27017/resource_monitor', { useNewUrlParser
   .catch(err => console.error(err));
 
 app.get('/', (req, res) => {
-  res.send('Dashboard tài nguyên');
+  try {
+    res.send('Dashboard tài nguyên');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Đã xảy ra lỗi');
+  }
 });
 
 app.listen(PORT, () => {
