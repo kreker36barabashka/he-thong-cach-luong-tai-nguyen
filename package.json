@@ -1,6 +1,6 @@
 {
   "name": "he-thong-cach-luong-tai-nguyen",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hệ thống quản lý và giám sát tài nguyên",
   "main": "index.js",
   "scripts": {
